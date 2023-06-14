@@ -1,11 +1,10 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-const WatchList = ({ watchList }) => {
-  const movieDisplay = watchList.map((watch) => {
-    return <MovieCard />;
+const Watchlist = ({ list, removeMovie }) => {
+  const movieDisplay = list.map((movie, index) => {
+    return <MovieCard movie={movie} removeMovie={removeMovie} list={list} />;
   });
-
   return (
     <div className="watchlist">
       <h1>My Watchlist</h1>
@@ -14,4 +13,4 @@ const WatchList = ({ watchList }) => {
   );
 };
 
-export default WatchList;
+export default Watchlist;
